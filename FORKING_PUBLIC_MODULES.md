@@ -24,7 +24,17 @@ It is recommended to consume HashiCorp [Verified modules](https://www.terraform.
 ### Trusted Author(s)
 * Forking modules mitigates much of the risk consuming open source code as ultimately we are in control of the code we use, but it still advisable to fork repositories from reputable authors.
 ### Licensing
-* James Johnson TBD
+* It is important to consider licenses under which modules are distributed.  Certain licenses may impose limitations or requirements (such as requiring derivative code to be shared).  Some licenses have already been reviewed and determined acceptable, and others should be avoided.  Any module distributed under a model not listed here should not be used until it has been reviewed with iPipeline's legal team.
+
+* Modules distributed under the following licenses **may** be utilized without review:
+  * LGPL
+  * MIT
+  * Apache
+  * BSD
+
+* Modules distributed under the following licenses **cannot** be used:
+  * GPL
+
 ### Actively Maintained
 * It is important to consume open source modules that are actively maintained by the community. Using the pulse insights in GitHub over the past month is a good view into the recent activity on a module
 
