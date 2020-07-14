@@ -83,7 +83,7 @@ Additional labels for pre-release and build metadata are available as extensions
 These users are assigned the *Write* role in order to push to your project, although the master branch is protected from contributors.  The terraform-contributors team members will have *write* role to encourage contribution to the repository.
 ### Code Owners
 These users are also assigned the *Write* role in order to push to your project, but they are also listed in the CODEOWNERS file in order to approve pull requests and push to the master branch.  There should be at least 2 code owners assigned per repository.
-### Becoming a code owner (https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners)
+### Becoming a Code Owner (https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners)
 1. Create a branch off of the master branch.
 2. Add your GitHub username to the appropriate line in the CODEOWNERS file in the repo.
 3. Push the changes up to the branch that you have created.
