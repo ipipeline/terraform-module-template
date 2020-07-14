@@ -84,11 +84,11 @@ These users are assigned the *Write* role in order to push to your project, alth
 ### Code Owners
 These users are also assigned the *Write* role in order to push to your project, but they are also listed in the CODEOWNERS file in order to approve pull requests and push to the master branch.  There should be at least 2 code owners assigned per repository.
 ### Becoming a Code Owner (https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners)
-1. Create a branch off of the master branch.
-2. Add your GitHub username to the appropriate line in the CODEOWNERS file in the repo.
-3. Push the changes up to the branch that you have created.
-3. Create a pull request.
-4. If the pull request is approved and all of the GitHub actions pass you will become a code owner of the repo.
+  * Create a branch off of the master branch.
+  * Add your GitHub username to the appropriate line in the CODEOWNERS file in the repo.
+  * Push the changes up to the branch that you have created.
+  * Create a pull request.
+  * If the pull request is approved and all of the GitHub actions pass you will become a code owner of the repo.
 ### Maintainers
 Users assigned the *Admin* role will have full access to the project.  This role should be limited to a select few individuals. Organizational and Account admins would also have repository admin role privileges if they were required so it may not be required for every repository to have admins explicitly assigned.
 
