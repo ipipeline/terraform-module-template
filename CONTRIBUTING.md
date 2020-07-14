@@ -4,6 +4,7 @@ Contributions to our repos are welcomed by any user interested in the improvemen
  1. Reporting a Bug or Feature
  2. Contributing code via Pull Request
 
+
 ## Reporting a Bug or Requesting a Feature
  - Before filling out a new request please:
    - Check if there are existing reports (opened or closed)
@@ -13,10 +14,10 @@ Contributions to our repos are welcomed by any user interested in the improvemen
 - Before filling out a pull Request :
   - Have related issues numbers
   - Not have changed any tags
-	
-  
+
+
 1.  Pull the latest of Master Branch
-2. Checkout feature branch 
+2. Checkout feature branch
 3. Make appropriate commits
 4. Push committed code to remote branch as needed
 5. Before final push please ensure:
@@ -29,6 +30,7 @@ Contributions to our repos are welcomed by any user interested in the improvemen
       - [Closing Issues using Keywords](https://help.github.com/en/enterprise/2.16/user/github/managing-your-work-on-github/closing-issues-using-keywords#about-issue-references)
 7. Request at least 1 approver (GitHub will automatically populate the approvers with code owners as approval from a code owners is required to merge).
 8. Pull Request will be merged if approved, and if all GH actions completed successfully
+
 
 ## Code of Conduct
   Our project has adopted [Contributor Covenant  v2.0](https://www.contributor-covenant.org/version/2/0/code_of_conduct/)

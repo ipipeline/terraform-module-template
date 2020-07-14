@@ -8,7 +8,7 @@
 
 
 # Creating a new GitHub repository
-## When to write a module 
+## When to write a module
 * In principle any combination of resources and other constructs can be factored out into a module, but over-using modules can make your overall Terraform configuration harder to understand and maintain, so we recommend moderation.
 * A good module should raise the level of abstraction by describing a new concept in your architecture that is constructed from resource types offered by providers.
 * A new repo should be requested for each module as iPipeline is taking a polyrepo approach to our Terraform modules.  It may make sense to have a limited number of submodules in the repo as long as [semantic versioning](https://semver.org/) is enforced.
@@ -18,7 +18,7 @@
   * Name of the repo following the terraform-\<PROVIDER\>-\<NAME\> [standard](https://www.terraform.io/docs/cloud/registry/publish.html). Examples: terraform-google-vault or terraform-aws-ec2-instance
   * Based on the terraform-module-template **(TODO: make hyperlink)**
   * List of GitHub Member usernames who should be granted the [Admin role](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization) in the repo.
-  
+
 
 # Customizing your newly provisioned GitHub repository
 * You should add a short description explaining the functionality of the Terraform module(s) in your repository to the repository description.
@@ -49,7 +49,7 @@ The [standard module structure](https://www.terraform.io/docs/modules/index.html
 │   ├── exampleB/
 │   ├── .../
 ```
-  
+
 # Contributing & Approving Changes
 * All contributions should follow the guidelines explained in [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -83,8 +83,13 @@ Additional labels for pre-release and build metadata are available as extensions
 These users are assigned the *Write* role in order to push to your project, although the master branch is protected from contributors.  The terraform-contributors team members will have *write* role to encourage contribution to the repository.
 ### Code Owners
 These users are also assigned the *Write* role in order to push to your project, but they are also listed in the CODEOWNERS file in order to approve pull requests and push to the master branch.  There should be at least 2 code owners assigned per repository.
+### Becoming a code owner (https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners)
+1. Create a branch off of the master branch.
+2. Add your GitHub username to the appropriate line in the CODEOWNERS file in the repo.
+3. Push the changes up to the branch that you have created.
+3. Create a pull request.
+4. If that pull request is approved you will become a code owner of the repo.
 ### Maintainers
-Users assigned the *Admin* role will have full access to the project.  This role should be limited to a select few individuals. Organizational and Account admins would also have repository admin role priveleges if they were required so it may not be required for every repository to have admins explicitly assigned.
+Users assigned the *Admin* role will have full access to the project.  This role should be limited to a select few individuals. Organizational and Account admins would also have repository admin role privileges if they were required so it may not be required for every repository to have admins explicitly assigned.
 
 See [Repository permission levels for an organization](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization) for more detailed information on permission levels.
-
