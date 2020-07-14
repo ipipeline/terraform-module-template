@@ -6,8 +6,8 @@ on:
     paths-ignore:
       - '.github/**'
 env:
-  tf_version: 'latest'
   tf_working_dir: '.'
+  tf_version: 'latest'
 jobs:
   terraform:
     name: 'Terraform GitHub Actions'
