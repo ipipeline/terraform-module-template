@@ -88,7 +88,7 @@ These users are also assigned the *Write* role in order to push to your project,
 2. Add your GitHub username to the appropriate line in the CODEOWNERS file in the repo.
 3. Push the changes up to the branch that you have created.
 3. Create a pull request.
-4. If that pull request is approved you will become a code owner of the repo.
+4. If the pull request is approved and all of the GitHub actions pass you will become a code owner of the repo.
 ### Maintainers
 Users assigned the *Admin* role will have full access to the project.  This role should be limited to a select few individuals. Organizational and Account admins would also have repository admin role privileges if they were required so it may not be required for every repository to have admins explicitly assigned.
 
