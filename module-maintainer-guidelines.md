@@ -23,7 +23,7 @@
 
 # Customizing your newly provisioned GitHub repository
 * You should add a short description explaining the functionality of the Terraform module(s) in your repository to the repository description.
-* **(label your repo..aka Topics... @Wayne-Ennis ...CCOE-923)**
+* You should be using Topics to help classify your repository.  Topics are labels placed on repositories to help users find repositories of interest. Furthermore, when a user clicks on the link of a topic, they will be taken to related repositories. Repository admins should choose topics that help label their repo based on its intended use, language, community, and/or subject area. For more info  on topics [Here](https://help.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics).
 * The .github/CODEOWNERS file in the template grants permissions to the code owners in the template repository. You should modify the [.github/CODEOWNERS](.github/CODEOWNERS) in your repository with your code owners.
 
 
