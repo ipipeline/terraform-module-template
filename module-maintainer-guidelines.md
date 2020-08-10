@@ -63,12 +63,12 @@ The [standard module structure](https://www.terraform.io/docs/modules/index.html
   4. *types* other than `fix:` and `feat:` are allowed, for example `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:` and `test:`.
 * Additional types are not mandated by the Conventional Commits specification, and have no implicit effect in semantic versioning (unless they include a BREAKING CHANGE).
 * Go to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for an in-depth explanation and examples.
-## Example commits
-### Commit message with description of new feature
+### Examples
+#### Commit message with description of new feature
 ```
 feat: adding security group to EC2 instance
 ``` 
-### Commit message with `!` to draw attention to a refactor breaking change
+#### Commit message with `!` to draw attention to a refactor breaking change
 ```
 refactor!: updating repository to support Terraform v12
 ```
