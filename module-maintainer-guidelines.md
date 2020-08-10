@@ -3,6 +3,7 @@
 * [Customizing your newly provisioned GitHub repository](#customizing-your-newly-provisioned-github-repository)
 * [Standard Module Structure](#standard-module-structure)
 * [Contributing & Approving Changes](#contributing--approving-changes)
+* [Maintaining the changelog](#maintaining-the-changelog)
 * [Creating a Release](#creating-a-release)
 * [Roles & Permissions](#roles--permissions)
 
@@ -52,6 +53,25 @@ The [standard module structure](https://www.terraform.io/docs/modules/index.html
 
 # Contributing & Approving Changes
 * All contributions should follow the guidelines explained in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+# Maintaining the changelog
+* The repository template includes a GitHub action which will generate and auto-update the [CHANGELOG.md](CHANGELOG.md) based off of the commit history. The GitHub action will also add tags which follow the [semantic versioning](https://semver.org/) pattern described in the [Creating a Release](#creating-a-release) section below. 
+* When contributing to this repository, users are required to follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) guidelines when adding messages to their commits. The commit message must contain the following structural elements, to communicate intent to the consumers of your repository:
+  1. **fix**: a commit of the *type* `fix` patches a bug in your codebase (this correlates with `PATCH` in semantic versioning).
+  2. **feat**: a commit of the *type* `feat` introduces a new feature to the codebase (this correlates with `MINOR`)
+  3. **BREAKING CHANGE**: a commit that has a footer `BREAKING CHANGE: `, or appends a `!` after the type/scope, introduces a breaking API change (correlating with `MAJOR` in semantic versioning). A BREAKING CHANGE can be part of commits of any *type*.
+  4. *types* other than `fix:` and `feat:` are allowed, for example `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:` and `test:`.
+* Additional types are not mandated by the Conventional Commits specification, and have no implicit effect in semantic versioning (unless they include a BREAKING CHANGE).
+* Go to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for an in-depth explanation and examples.
+## Example commits
+### Commit message with description of new feature
+```
+feat: adding security group to EC2 instance
+``` 
+### Commit message with `!` to draw attention to a refactor breaking change
+```
+refactor!: updating repository to support Terraform v12
+```
 
 # Creating a Release
 * Modules should always be pinned to a [specific version](https://www.terraform.io/docs/modules/sources.html#selecting-a-revision-1) so it is important that tags are created to publish versions.
