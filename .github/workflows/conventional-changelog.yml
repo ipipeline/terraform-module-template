@@ -1,0 +1,20 @@
+name: Conventional Changelog Generator
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '.github/**'
+
+jobs:
+  build:
+    name: Conventional Changelog Generator
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Conventional Changelog Action
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          skip-version-file: true
