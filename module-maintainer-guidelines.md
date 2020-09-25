@@ -55,34 +55,74 @@ The [standard module structure](https://www.terraform.io/docs/modules/index.html
 # Contributing & Approving Changes
 * All contributions should follow the guidelines explained in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-# Maintaining the changelog
-* The repository template includes a GitHub action which will generate and auto-update the [CHANGELOG.md](CHANGELOG.md) based off of the commit history. The GitHub action will also add tags which follow the [semantic versioning](https://semver.org/) pattern described in the [Creating a Release](#creating-a-release) section below. 
-* When contributing to this repository, users are required to follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) guidelines when adding messages to their commits. The commit message must contain the following structural elements, to communicate intent to the consumers of your repository:
-  1. **fix**: a commit of the *type* `fix` patches a bug in your codebase (this correlates with `PATCH` in semantic versioning).
-  2. **feat**: a commit of the *type* `feat` introduces a new feature to the codebase (this correlates with `MINOR`)
-  3. **BREAKING CHANGE**: a commit that has a footer `BREAKING CHANGE: `, or appends a `!` after the type/scope, introduces a breaking API change (correlating with `MAJOR` in semantic versioning). A BREAKING CHANGE can be part of commits of any *type*.
-  4. *types* other than `fix:` and `feat:` are allowed, for example `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:` and `test:`.
-* Additional types are not mandated by the Conventional Commits specification, and have no implicit effect in semantic versioning (unless they include a BREAKING CHANGE).
-* Go to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for an in-depth explanation and examples.
-### Examples
-#### Commit message with description of new feature
+# Maintaining the CHANGELOG 
+* A CHANGELOG is a file which contains a curated, chronologically ordered list of notable changes for each [semantic version](https://semver.org/) of the Terraform module.
+* When contributing to this repository, users are required to maintain the [CHANGELOG.md](CHANGELOG.md). Maintaining the CHANGELOG makes it easier for users and contributors to see precisely what notable changes have been made between each release/version of the Terraform module.
+* What makes a good CHANGELOG?
+  * It is made for humans, not machines, so legibility is crucial.
+  * Easy to link to any section (hence [Markdown](https://guides.github.com/features/mastering-markdown/) over plain text).
+  * One sub-section per version.
+  * List releases in reverse-chronological order (newest on top).
+  * Write all dates in `YYYY-MM-DD` format. (Example `2020-09-25` for `September 25th, 2020`).
+  * Each version should:
+    * List its release date in the above format.
+    * Group changes to describe their impact on the project, as follows:
+      * `Added` for new features.
+      * `Changed` for changes in existing functionality.
+      * `Deprecated` for once-stable features removed in upcoming releases.
+      * `Removed` for deprecated features removed in this release.
+      * `Fixed` for any bug fixes.
+      * `Refactor` for changes in code that do not add/remove/change existing functionality
+      * `Security` to invite users to upgrade in case of vulnerabilities.
+
+### Example CHANGELOG.md file with markdown syntax:
 ```
-feat: adding security group to EC2 instance
-``` 
-#### Commit message with `!` to draw attention to a refactor breaking change
-```
-refactor!: updating repository to support Terraform v12
+# 0.2.0 (2020-08-25)
+
+### Fixed
+
+* Fixed issue where S3 bucket was using the wrong key to encrypt content
+
+### Refactor
+
+* Removing hard-coded environment in EC2 instance and replacing with variable containing the environment
+* Removing hard-coded environment value in the callback url for the user pool client and replacing with variable
+* Renaming S3 bucket IAM role policy resource
+* Refactored tags property to use map variable passed in from Terragrunt file
+
+
+### Changed
+
+* Added code to create Lambda function module for QA environment  
+* Adding resources for Cognito user pool, Cognito user pool domain and Cognito user pool client
+* Adding S3 module for UAT environment
+* Adding UAT terragrunt file for Cognito user pool
+
+
+# 0.1.1 (2020-08-24)
+
+### Fixed
+
+* Fixed a bug which caused a circular reference between the security group, security group rules and EC2 instances
+
+
+# 0.1.0 (2020-08-22)
+
+### Changed
+
+* Creating new ALB and ECS resources for autoscaling group
+* Updating S3 bucket properties to enable versioning and encryption
 ```
 
 # Creating a Release
 * Modules should always be pinned to a [specific version](https://www.terraform.io/docs/modules/sources.html#selecting-a-revision-1) so it is important that tags are created to publish versions.
-* A tag will be auto-generated by the Changelog GitHub action when merging into the master branch based off of commit message history.
-* It is recommended that a release be created from the tags that are auto-generated from the GitHub action as they contain a complete history of commits for that release.
-* If you are required to create a tag manually, the tag must follow the [semantic versioning](https://semver.org/) pattern of vMAJOR.MINOR.PATCH (i.e. v1.2.23) where:
+* The best way to create a version tag is by creating a [release](/release), but you can just create a tag directly.
+* Most importantly, the tag must follow the [semantic versioning](https://semver.org/) pattern of vMAJOR.MINOR.PATCH (i.e. v1.2.23) where:
   * MAJOR version when you make incompatible API changes,
   * MINOR version when you add functionality in a backwards compatible manner, and
-  * PATCH version when you make backwards compatible bug fixes.
+  * PATCH version when you make backwards compatible bug fixes.  
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+* When drafting a release, the semantic version must match the latest version listed on the CHANGELOG.md file. Ensuring these match makes it easier for users and contributors to see what code is contained in a specific release.
 
 # Quality of Code
 * It is important to think of your module as a product you are delivering to the rest of the organization and therefore they are dependent on stable, quality, reliable releases.
