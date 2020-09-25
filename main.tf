@@ -30,6 +30,10 @@ resource "aws_instance" "example" {
     encrypted = true
   }
 
+  metadata_options {
+    http_tokens = "required"
+  }
+
   tags = {
     Name        = "HelloWorld"
     Environment = var.environment
