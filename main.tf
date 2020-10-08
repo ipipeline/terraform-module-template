@@ -35,7 +35,7 @@ resource "aws_instance" "example" {
   }
 
   tags = {
-    Name        = "HelloWorld"
+    Name        = "Example-Instance"
     Environment = var.environment
     Creator     = var.creator
   }
