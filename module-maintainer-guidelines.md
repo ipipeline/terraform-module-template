@@ -17,7 +17,7 @@
 ## How to request a new GitHub repository for your module
 * An email should be sent to git-admins@ipipeline.com with the following information to request a new GitHub repo for a Terraform module:
   * Name of the repo following the terraform-\<PROVIDER\>-\<NAME\> [standard](https://www.terraform.io/docs/cloud/registry/publish.html). Examples: terraform-google-vault or terraform-aws-ec2-instance
-  * Based on the terraform-module-template **(TODO: make hyperlink)**
+  * Based on the [terraform-module-template](https://github.com/ipipeline/terraform-module-template)
   * Please grant the "All Employees" Team Write permissions to the new repository.
   * List of GitHub Member usernames who should be granted the [Admin role](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization) in the repo.
 
